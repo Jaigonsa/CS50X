@@ -1,0 +1,9 @@
+cs50
+Flask
+Flask-Session
+Flask[async]
+requests
+deepl
+deepgram-sdk
+werkzeug.security
+functools

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <link href="/static/style.css" rel="stylesheet">
+
+        <title>toVoice | Register</title>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+          <symbol id="arrow-right-square-fill" viewBox="0 0 16 16">
+            <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+          </symbol>
+        </svg>
+
+        <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example" style="height: 5%">
+          <div class="container-fluid" style="margin-left: 90%">
+            <div class="collapse navbar-collapse" id="navbarsExample02">
+              <ul class="navbar-nav me-auto ">
+                <li class="nav-item">
+                  <a class="nav-link" href="register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login">Log In</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  </head>
+
+
+    <body style="background-image: none">
+
+        <div class="container">
+          <div class="box-register" style="margin-top: 155px;">
+
+            <!--Form-->
+            <div class="container px-4 py-4" id="hanging-icons">
+              <h3 class="header" style="margin: 0 265px 20px 0;">Register</h3>
+              <form action="/register" method="post">
+                <input autocomplete="off" class="input" type="text" id="username" name="username" placeholder="Username">
+                <input autocomplete="off" class="input" type="password" id="password" name="password" placeholder="Password">
+                <input autocomplete="off" class="input" type="password" id="confirmation" name="confirmation" placeholder="Confirm password">
+                <p style="display: inline-block; margin: 0 90px 0 5px; font-size: 14px;">Already registred? <a href="login">Log In.</a></p>
+                <button class="btn btn-light" type="submit" style="float: right; padding: 0px;">
+                  <svg class="bi" width="2em" height="2em"><use xlink:href="#arrow-right-square-fill"></use></svg>
+                </button>
+              </form>
+              <!--Flash message-->
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            </div>
+          </div>
+        <footer id="credit" style="margin-bottom: 0%">
+          <p>Created by Jaime González Sánchez for <a href="https://cs50.harvard.edu/x/2023/">CS50’s Introduction to Computer Science</a>.</p>
+        </footer>
+        </div>
+
+    </body>
+
+</html>

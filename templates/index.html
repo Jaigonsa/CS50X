@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<div class="row g-4 g-lg-5" style="margin: -5px 0px 15px 0px;">
+  <!-- Image -->
+  <div class="col-lg-6 position-relative">
+    <img src="/static/headphones.png" width="900" height="600" class="main-image" alt="main">
+  </div>
+  <!-- Index options -->
+  <div class="col-lg-6 position-relative mb-0 mb-md-0">
+    <div class="box-index">
+      <div class="container px-4 py-2" id="hanging-icons">
+        <div class="row-cols-1 row g-1 py-2">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3" >
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#people-fill"></use></svg>
+            </div>
+            <div>
+              <h3 class="header"><a href="createvoice" class="darklink">Custom voice</a></h3>
+              <p class="text">Create a custom voice model from an audio file. This personalized voice model is stored and can be used for text-to-speech applications.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#chat-left-quote-fill"></use></svg>
+            </div>
+            <div>
+              <h3 class="header"><a href="speechtotext" class="darklink">Speech to text</a></h3>
+              <p class="text">Transcribe an audio file into text. This tool uses speech recognition algorithms to convert spoken words into written text.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#chat-square-text-fill"></use></svg>
+            </div>
+            <div>
+              <h3 class="header"><a href="texttospeech" class="darklink">Text to Speech</a></h3>
+              <p class="text">Generate an audio file from text input using a selected voice model. It uses natural language processing and speech synthesis to produce lifelike speech.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#chat-text-fill"></use></svg>
+            </div>
+            <div>
+              <h3 class="header"><a href="speechtospeech" class="darklink">Speech to Speech</a></h3>
+              <p class="text">Translate an audio file into another language while maintaining the original voice model using custom voice models.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

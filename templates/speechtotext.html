@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Speech to text
+{% endblock %}
+
+{% block main %}
+
+<div class="row g-4 g-lg-5">
+  <!-- Form -->
+  <div class="col-lg-6 position-relative mb-4 mb-md-0 px-0 py-0">
+    <div class="box-voice">
+      <div class="container px-4 py-4" id="hanging-icons">
+        <!-- Intro -->
+        <div>
+          <h3 class="header2">
+            <svg class="bi" width="1.3em" height="1.3em" style="padding-bottom: 3px"><use xlink:href="#filetype-mp3"></use></svg>
+            Upload audio file</a></h3>
+          <p class="text2">Transcribe an audio file into text. This tool uses speech recognition algorithms to convert spoken words into written text.</p>
+          <!-- Voice name & file form-->
+          <form action="/speechtotext" method="post" enctype="multipart/form-data">
+            <input autocomplete="off" class="input-file" type="file" id="mainfile" name="mainfile" placeholder="File..." accept=".mp3">
+            <button class="btn btn-light" type="submit" style="float: right; padding: 0px; margin: 5px;" onclick="Loading()" id="arrow">
+              <svg class="bi" width="2em" height="2em"><use xlink:href="#arrow-right-square-fill"></use></svg>
+            </button>
+          </form>
+          <!--Flash message-->
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="flash-message" id="hide">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+          <button class="btn btn-dark" style="float: right; padding: 5px; margin: 6px;" id="loading">
+            <div class="loader"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Image -->
+  <div class="col-lg-6 position-relative">
+    <img src="/static/micro.png" width="486.4" height="641.6" class="right-image" alt="main">
+  </div>
+</div>
+
+<script>
+
+var arrow = document.querySelector("#arrow");
+var loading = document.querySelector("#loading");
+var hide = document.querySelector("#hide");
+
+loading.style.display = "none";
+
+function Loading() {
+  arrow.style.display = "none";
+  loading.style.display = "block";
+  hide.style.display = "none";
+}
+
+</script>
+
+{% endblock %}
